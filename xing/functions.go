@@ -206,7 +206,9 @@ func (x *Xing) FindTargetSlug(company string) (string, string, error) {
 			return "", "", fmt.Errorf("error when choosing company: %+v", err)
 
 		}
-		iId, err := strconv.Atoi(strings.Split(id, "\n")[0])
+		id = strings.TrimSuffix(id, "\n")
+		id = strings.TrimSuffix(id, "\r")
+		iId, err := strconv.Atoi(id)
 		if err != nil {
 			return "", "", fmt.Errorf("unable to convert id to int: %+v", err)
 		}
