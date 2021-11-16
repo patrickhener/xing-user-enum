@@ -87,16 +87,6 @@ type LoginResponse struct {
 	Target  string `json:"target"`
 }
 
-// type QueryCompany struct {
-// 	ID    int    `json:"id"`
-// 	Title string `json:"title"`
-// 	Image string `json:"image"`
-// }
-
-// type Collection struct {
-// 	Collection []QueryCompany `json:"collection"`
-// }
-
 type RespCompany struct {
 	Count string `json:"count"`
 	Items []Item `json:"items"`

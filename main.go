@@ -84,41 +84,12 @@ func main() {
 		os.Exit(-1)
 	}
 
-	// Identify target by provided company string
-	// comp, err := x.FindTarget(company)
-	// if err != nil {
-	// 	fmt.Printf("[-] Error finding target company: %+v", err)
-	// 	os.Exit(-1)
-	// }
-
 	slug, companyTitle, err := x.FindTargetSlug(company)
 	if err != nil {
 		fmt.Printf("[-] Error finding target company: %+v", err)
 		os.Exit(-1)
 	}
 	fmt.Printf("[+] Target Company is: '%s'\n", companyTitle)
-
-	/*
-		var target xing.QueryCompany
-
-		// If there is more than one company throw error
-		if len(comp.Collection) > 1 {
-			fmt.Println("[-] There were more than one hits on company")
-
-			for _, c := range comp.Collection {
-				fmt.Printf("[*] %d - %s (%s)\n", c.ID, c.Title, c.Image)
-			}
-
-			fmt.Println("[-] Please refine search by company title")
-			os.Exit(-1)
-		} else if len(comp.Collection) < 1 {
-			fmt.Println("[-] No company with this name was found")
-			os.Exit(-1)
-		} else {
-			target = comp.Collection[0]
-			fmt.Printf("[+] Target Company is: %d - %s (%s)\n", target.ID, target.Title, target.Image)
-		}
-	*/
 
 	fmt.Println("[*] Query company unique ID")
 
