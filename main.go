@@ -6,10 +6,13 @@ import (
 	"os"
 	"strings"
 	"syscall"
-	"xing-user-enum/xing"
+
+	"github.com/patrickhener/xing-user-enum/xing"
 
 	"golang.org/x/term"
 )
+
+const version string = "v0.0.4"
 
 // args will setup connection details and target
 // either from env or if not there prompt for it
@@ -64,6 +67,7 @@ func args() (string, string, string, string, error) {
 }
 
 func main() {
+	fmt.Printf("xing-user-enum %s\n\n", version)
 	// fetch connection details
 	user, pass, company, proxy, err := args()
 	if err != nil {

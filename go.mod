@@ -1,4 +1,4 @@
-module xing-user-enum
+module github.com/patrickhener/xing-user-enum
 
 go 1.17
 
