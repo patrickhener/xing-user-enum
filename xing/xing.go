@@ -424,8 +424,7 @@ func SaveOneLetterFirstLast(data Data) error {
 
 	for _, e := range data.Company.Employees.Edges {
 		if e.Node.ProfileDetails.ID != "" {
-			sub := e.Node.ProfileDetails.FirstName[0:]
-			format := fmt.Sprintf("%s.%s\n", sub, e.Node.ProfileDetails.LastName)
+			format := fmt.Sprintf("%s.%s\n", string(e.Node.ProfileDetails.FirstName[0]), e.Node.ProfileDetails.LastName)
 			_, err := datawriter.WriteString(format)
 			if err != nil {
 				return err
