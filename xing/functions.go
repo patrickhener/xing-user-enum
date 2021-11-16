@@ -125,36 +125,6 @@ func (x *Xing) Connect() error {
 	}
 }
 
-// func (x *Xing) FindTarget(company string) (Collection, error) {
-// 	var suggestions Collection
-
-// 	base := "https://www.xing.com/dsc/suggestions/companies/name.json?consumer=loggedin.web.search.companies.name&query="
-
-// 	url := fmt.Sprintf("%s%s", base, url.PathEscape(company))
-
-// 	req, err := http.NewRequest("GET", url, nil)
-// 	if err != nil {
-// 		return suggestions, fmt.Errorf("unable to craft request: %+v", err)
-// 	}
-
-// 	resp, err := x.Session.Do(req)
-// 	if err != nil {
-// 		return suggestions, fmt.Errorf("unable to request company: %+v", err)
-// 	}
-// 	defer resp.Body.Close()
-
-// 	data, err := ioutil.ReadAll(resp.Body)
-// 	if err != nil {
-// 		return suggestions, fmt.Errorf("unable to read server response: %+v", err)
-// 	}
-
-// 	if err := json.Unmarshal(data, &suggestions); err != nil {
-// 		return suggestions, fmt.Errorf("unable to unmarshal received data into struct: %+v", err)
-// 	}
-
-// 	return suggestions, nil
-// }
-
 func (x *Xing) FindTargetSlug(company string) (string, string, error) {
 	var data RespCompany
 	slug := ""
